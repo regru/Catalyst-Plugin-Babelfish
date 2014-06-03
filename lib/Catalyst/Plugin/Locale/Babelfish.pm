@@ -1,6 +1,6 @@
 package Catalyst::Plugin::Locale::Babelfish;
 
-# ABSTRACT: Locale::Babelfish for Catalyst
+# ABSTRACT: Locale::Babelfish I18N for Catalyst
 
 use strict;
 use warnings;

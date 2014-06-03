@@ -1,6 +1,6 @@
 # NAME
 
-Catalyst::Plugin::Locale::Babelfish - Locale::Babelfish for Catalyst
+Catalyst::Plugin::Locale::Babelfish - Locale::Babelfish I18N for Catalyst
 
 # VERSION
 
