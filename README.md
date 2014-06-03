@@ -6,6 +6,29 @@ Catalyst::Plugin::Locale::Babelfish - Locale::Babelfish for Catalyst
 
 version 0.01
 
+# SYNOPSIS
+
+    use Catalyst 'Locale::Babelfish';
+    ... TODO
+
+# DESCRIPTION
+
+... TODO
+
+# CONFIGURATION
+
+    __PACKAGE__->config(
+        'Plugin::Locale::Babelfish' => {
+            ... TODO
+        }
+    );
+
+# SEE ALSO
+
+[Locale::Babelfish](https://metacpan.org/pod/Locale::Babelfish)
+
+[Catalyst](https://metacpan.org/pod/Catalyst)
+
 # AUTHORS
 
 - Igor Mironov <grif@cpan.org>
