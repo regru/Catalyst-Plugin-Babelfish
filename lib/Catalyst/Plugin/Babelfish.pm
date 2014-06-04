@@ -77,6 +77,10 @@ and other methods
 
 sub l10n { $babelfish }
 
+=for Pod::Coverage setup_finalize
+
+=cut
+
 sub setup_finalize {
     my $class = shift;
 
@@ -88,6 +92,10 @@ sub setup_finalize {
 
     $class->next::method(@_);
 }
+
+=for Pod::Coverage prepare
+
+=cut
 
 sub prepare {
     my $class = shift;
