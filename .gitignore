@@ -13,7 +13,7 @@ inc/
 nytprof.out
 pod2htm*.tmp
 pm_to_blib
-Catalyst-Plugin-Locale-Babelfish-*
+Catalyst-Plugin-Babelfish-*
 MANIFEST
 MANIFEST.SKIP
 *.tar.gz
