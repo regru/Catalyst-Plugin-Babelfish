@@ -1,6 +1,6 @@
 # NAME
 
-Catalyst::Plugin::Locale::Babelfish - Locale::Babelfish I18N for Catalyst
+Catalyst::Plugin::Babelfish - Locale::Babelfish for Catalyst
 
 # VERSION
 
@@ -8,26 +8,78 @@ version 0.01
 
 # SYNOPSIS
 
-    use Catalyst 'Locale::Babelfish';
-    ... TODO
+    use Catalyst 'Babelfish';
+
+    $c->set_lang('ru_RU');
+    print $c->l10n->t('main.hello');
+
+Use a macro if you're lazy:
+
+    [% MACRO t(text, args) BLOCK;
+        c.t(text, args);
+    END; %]
+
+    [% t('main.hello') %]
+    [% t('main.test', { test => 1}) %]
 
 # DESCRIPTION
 
-... TODO
+...
 
-# CONFIGURATION
+## CONFIGURATION
+
+You can override any parameter sent to [Locale::Babelfish](https://metacpan.org/pod/Locale::Babelfish) by specifying
+a `babelfish` hashref to the config section:
 
     __PACKAGE__->config(
-        'Plugin::Locale::Babelfish' => {
-            ... TODO
-        }
+        babelfish => {
+            default_lang => 'en_US',
+            dirs         => [ "/path/to/dictionaries" ],
+            langs        => [ 'fr_FR', 'en_US' ],
+            lang_param   => 'language',
+        },
     );
+
+All parameters equal to Locale::Babelfish except `lang_param`
+this parameter for automatic language change.
+Plugin will check parameter in GET-POST request, by default `lang`
+
+# METHODS
+
+## t
+
+    $c->t( ... );
+
+Short form for
+
+    $c->l10n->t( ... );
+
+## l10n
+
+Babelfish object
+
+    $c->l10n->t( ... )
+    $c->l10n->has_any_value( ... )
+
+and other methods
+
+## set\_lang
+
+Setting language
+
+    $c->set_lang( $lang );
+
+## current\_lang
+
+Current language
+
+    $c->current_lang;
 
 # SEE ALSO
 
 [Locale::Babelfish](https://metacpan.org/pod/Locale::Babelfish)
 
-[Catalyst](https://metacpan.org/pod/Catalyst)
+[https://github.com/nodeca/babelfish](https://github.com/nodeca/babelfish)
 
 # AUTHOR
 

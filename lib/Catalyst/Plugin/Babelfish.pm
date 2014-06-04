@@ -1,9 +1,13 @@
-﻿package Catalyst::Plugin::Babelfish;
+package Catalyst::Plugin::Babelfish;
 
+# ABSTRACT: Locale::Babelfish for Catalyst
 
-=head1 NAME
+use utf8;
+use Modern::Perl;
 
-Catalyst::Plugin::Babelfish - Locale::Babelfish for Catalyst
+use Locale::Babelfish;
+
+# VERSION
 
 =head1 SYNOPSIS
 
@@ -21,9 +25,9 @@ Use a macro if you're lazy:
     [% t('main.hello') %]
     [% t('main.test', { test => 1}) %]
 
-
 =head1 DESCRIPTION
 
+...
 
 =head2 CONFIGURATION
 
@@ -32,36 +36,29 @@ a C<babelfish> hashref to the config section:
 
     __PACKAGE__->config(
         babelfish => {
-                        default_lang => 'en_US',
-                        dirs         => [ "/path/to/dictionaries" ],
-                        langs        => [ 'fr_FR', 'en_US' ],
-                        lang_param   => 'language',
-                     },
+            default_lang => 'en_US',
+            dirs         => [ "/path/to/dictionaries" ],
+            langs        => [ 'fr_FR', 'en_US' ],
+            lang_param   => 'language',
+        },
     );
 
-All parameters equal to Locale::Babelfish except 'lang_param'
+All parameters equal to Locale::Babelfish except C<lang_param>
 this parameter for automatic language change.
-Plugin will check parameter in GET-POST request, by default 'lang'
-
+Plugin will check parameter in GET-POST request, by default C<lang>
 
 =cut
-
-use utf8;
-use Modern::Perl;
-
-use Locale::Babelfish;
 
 our $babelfish = undef;
 our $params    = undef;
 
-
-=head1 METHODS
-
 =method t
 
-    $c->t( ... )
+    $c->t( ... );
 
-Short form for  $c->l10n->t(...)
+Short form for
+
+    $c->l10n->t( ... );
 
 =cut
 
@@ -69,17 +66,16 @@ sub t { my $self = shift; $babelfish->t( @_ ) }
 
 =method l10n
 
-  Babelfish object
+Babelfish object
 
     $c->l10n->t( ... )
     $c->l10n->has_any_value( ... )
 
-  and other methods
+and other methods
 
 =cut
 
 sub l10n { $babelfish }
-
 
 sub setup_finalize {
     my $class = shift;
@@ -102,13 +98,11 @@ sub prepare {
     return $c;
 }
 
-
 =method set_lang
 
-    Setting language
+Setting language
 
-    $c->set_lang( $lang )
-
+    $c->set_lang( $lang );
 
 =cut
 
@@ -119,9 +113,10 @@ sub set_lang {
 
 
 =method current_lang
-  Current language
 
-    $c->current_lang
+Current language
+
+    $c->current_lang;
 
 =cut
 
