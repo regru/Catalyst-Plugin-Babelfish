@@ -29,11 +29,9 @@ version 0.01
 
 [Catalyst](https://metacpan.org/pod/Catalyst)
 
-# AUTHORS
+# AUTHOR
 
-- Igor Mironov <grif@cpan.org>
-- Crazy Panda LLC
-- REG.RU LLC
+Igor Mironov <grif@cpan.org>
 
 # COPYRIGHT AND LICENSE
 

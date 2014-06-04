@@ -1,4 +1,4 @@
-package Catalyst::Plugin::Babelfish;
+ï»¿package Catalyst::Plugin::Babelfish;
 
 
 =head1 NAME
@@ -47,6 +47,7 @@ Plugin will check parameter in GET-POST request, by default 'lang'
 
 =cut
 
+use utf8;
 use Modern::Perl;
 
 use Locale::Babelfish;
@@ -71,8 +72,8 @@ sub t { my $self = shift; $babelfish->t( @_ ) }
 
   Babelfish object
 
-  $ñ->l10n->t( ... )
-  $ñ->l10n->has_any_value( ... )
+  $c->l10n->t( ... )
+  $c->l10n->has_any_value( ... )
   and other methods
 
 =cut
