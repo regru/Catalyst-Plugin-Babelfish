@@ -9,18 +9,17 @@ Catalyst::Plugin::Babelfish - Locale::Babelfish for Catalyst
 
     use Catalyst 'Babelfish';
 
-
     $c->set_lang('ru_RU');
     print $c->l10n->t('main.hello');
 
 Use a macro if you're lazy:
 
-   [% MACRO t(text, args) BLOCK;
-       c.t(text, args);
-   END; %]
+    [% MACRO t(text, args) BLOCK;
+        c.t(text, args);
+    END; %]
 
-   [% t('main.hello') %]
-   [% t('main.test', { test => 1}) %]
+    [% t('main.hello') %]
+    [% t('main.test', { test => 1}) %]
 
 
 =head1 DESCRIPTION
@@ -60,7 +59,7 @@ our $params    = undef;
 
 =method t
 
-  $c->t( ... )
+    $c->t( ... )
 
 Short form for  $c->l10n->t(...)
 
@@ -72,8 +71,9 @@ sub t { my $self = shift; $babelfish->t( @_ ) }
 
   Babelfish object
 
-  $c->l10n->t( ... )
-  $c->l10n->has_any_value( ... )
+    $c->l10n->t( ... )
+    $c->l10n->has_any_value( ... )
+
   and other methods
 
 =cut
@@ -105,9 +105,10 @@ sub prepare {
 
 =method set_lang
 
-  $c->set_lang( $lang )
+    Setting language
 
-  Setting language
+    $c->set_lang( $lang )
+
 
 =cut
 
@@ -118,10 +119,9 @@ sub set_lang {
 
 
 =method current_lang
-
-  $c->current_lang
-
   Current language
+
+    $c->current_lang
 
 =cut
 
