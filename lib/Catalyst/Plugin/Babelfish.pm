@@ -116,7 +116,7 @@ Setting language
 
 sub set_lang {
     my ($c, $lang) = @_;
-    $babelfish->set_context_lang($lang);
+    $babelfish->set_locale($lang);
 }
 
 
@@ -131,7 +131,7 @@ Current language
 sub current_lang {
     my $c  = shift;
 
-    return $babelfish->context_lang;
+    return $babelfish->current_locale;
 }
 
 =head1 SEE ALSO
