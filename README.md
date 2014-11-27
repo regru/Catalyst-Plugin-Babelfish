@@ -4,13 +4,14 @@ Catalyst::Plugin::Babelfish - Locale::Babelfish for Catalyst
 
 # VERSION
 
-version 0.01
+version 1.0
 
 # SYNOPSIS
 
     use Catalyst 'Babelfish';
 
-    $c->set_lang('ru_RU');
+    $c->l10n->locale('ru_RU');
+    print $c->l10n->locale;
     print $c->l10n->t('main.hello');
 
 Use a macro if you're lazy:
@@ -33,10 +34,9 @@ a `babelfish` hashref to the config section:
 
     __PACKAGE__->config(
         babelfish => {
-            default_lang => 'en_US',
-            dirs         => [ "/path/to/dictionaries" ],
-            langs        => [ 'fr_FR', 'en_US' ],
-            lang_param   => 'language',
+            default_locale => 'en_US',
+            dirs           => [ "/path/to/dictionaries" ],
+            lang_param     => 'language',
         },
     );
 
@@ -63,27 +63,16 @@ Babelfish object
 
 and other methods
 
-## set\_lang
-
-Setting language
-
-    $c->set_lang( $lang );
-
-## current\_lang
-
-Current language
-
-    $c->current_lang;
-
 # SEE ALSO
 
 [Locale::Babelfish](https://metacpan.org/pod/Locale::Babelfish)
 
 [https://github.com/nodeca/babelfish](https://github.com/nodeca/babelfish)
 
-# AUTHOR
+# AUTHORS
 
-Igor Mironov <grif@cpan.org>
+- Akzhan Abdulin <akzhan@cpan.org>
+- Igor Mironov <grif@cpan.org>
 
 # COPYRIGHT AND LICENSE
 
