@@ -2,6 +2,8 @@
 
 Catalyst::Plugin::Babelfish - Locale::Babelfish for Catalyst
 
+[![Build Status](https://travis-ci.org/regru/Catalyst-Plugin-Babelfish.svg?branch=master)](https://travis-ci.org/regru/Catalyst-Plugin-Babelfish)
+
 # VERSION
 
 version 1.000000
