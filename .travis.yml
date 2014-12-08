@@ -17,7 +17,7 @@ before_install:
     - "echo 'user REGRU' > ~/.pause"
     - "git config user.email 'regru@example.com'"
     - "git config user.name 'REG.RU LLC'"
-    - "cpanm --self-upgrade"
+    - "perlbrew install-cpanm"
     - "cpanm --version"
     - "cpanm -q -n Test::CPAN::Meta"
     - "cpanm -q -n Test::Pod::Coverage"
